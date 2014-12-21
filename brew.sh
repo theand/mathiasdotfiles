@@ -28,11 +28,11 @@ brew install gnu-sed --with-default-names
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
-brew install bash
+#brew install bash
 brew install bash-completion
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+#brew install wget --with-iri
 
 # Install RingoJS and Narwhal.
 # Note that the order in which these are installed is important;
@@ -41,14 +41,14 @@ brew install ringojs
 brew install narwhal
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
+#brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
+#brew install homebrew/php/php55 --with-gmp
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install bfg
-brew install binutils
+#brew install binutils
 brew install binwalk
 brew install cifer
 brew install dex2jar
@@ -73,7 +73,7 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
-brew install git
+#brew install git
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
@@ -83,13 +83,13 @@ brew install pv
 brew install rename
 brew install rhino
 brew install speedtest_cli
-brew install tree
+#brew install tree
 brew install webkit2png
 brew install zopfli
 
 # Install Node.js. Note: this installs `npm` too, using the recommended
 # installation method.
-brew install node
+#brew install node
 
 # Remove outdated versions from the cellar.
 brew cleanup
