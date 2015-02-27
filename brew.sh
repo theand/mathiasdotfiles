@@ -98,5 +98,8 @@ brew install webkit2png
 # installation method.
 #brew install node
 
+# Install io.js
+brew install iojs
+
 # Remove outdated versions from the cellar.
 brew cleanup
