@@ -50,8 +50,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 source /opt/boxen/env.sh
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export CATALINA_HOME="/opt/boxen/homebrew/Cellar/tomcat7/7.0.57/libexec/"
-export M2_HOME="/opt/boxen/homebrew/Cellar/maven/3.2.5/libexec/"
-export M2=$M2_HOME/bin
-export M2_REPO="~/.m2/repository/"

@@ -7,6 +7,8 @@ export HISTFILESIZE="${HISTSIZE}";
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
 
+export PROMPT_COMMAND='history -a'
+
 # Prefer US English and use UTF-8.
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
@@ -19,3 +21,12 @@ export MANPAGER='less -X';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
+
+
+# Java Dev Env.
+export JAVA_HOME=$(/usr/libexec/java_home)
+export CATALINA_HOME="/opt/boxen/homebrew/Cellar/tomcat7/7.0.57/libexec/"
+export M2_HOME="/opt/boxen/homebrew/Cellar/maven/3.2.5/libexec/"
+export M2=$M2_HOME/bin
+export M2_REPO="~/.m2/repository/"
+
