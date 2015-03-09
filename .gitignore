@@ -8,7 +8,14 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+ethumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+Icon
+#Etc
+test.log
+.idea
+.settings
+.svn
