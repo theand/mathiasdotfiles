@@ -19,6 +19,7 @@ alias gs="git-smb"
 alias gf='git open'
 alias greset='git reset --hard'
 alias greseto='git reset --hard origin'
+alias gignored='git ls-files -o -i --exclude-standard'
 alias h="history"
 alias j="jobs"
 alias rm="rm -i"
