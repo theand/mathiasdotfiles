@@ -18,7 +18,6 @@ export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
 # Omit duplicates and commands that begin with a space from history.
 export HISTCONTROL='ignoreboth';
-
 export PROMPT_COMMAND='history -a'
 
 # Make some commands not show up in history
@@ -43,3 +42,4 @@ export CATALINA_HOME="/usr/local/opt/tomcat/libexec/"
 export M2_HOME="/usr/local/opt/maven/libexec/"
 export M2=$M2_HOME/bin
 export M2_REPO="~/.m2/repository/"
+

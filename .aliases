@@ -177,14 +177,6 @@ alias path='echo -e ${PATH//:/\\n}'
 
 
 
-
-####################
-###### Heesang's own
-####################
-
-
-
-
 #EUC-KR to UTF-8
 alias e2u="iconv -c -f euc-kr -t utf-8 "
 alias u2e="iconv -c -f utf-8 -t euc-kr "
@@ -199,11 +191,6 @@ alias privoxystart="privoxy  /usr/local/etc/privoxy/config"
 alias current_git_email="git config user.email ; git config user.name "
 alias cge="current_git_email"
 
-
-
-
-
-
 alias cdw="cd ~/Works"
 
 #ETC
@@ -212,19 +199,6 @@ alias functions="declare -F"
 alias find_dir="find . -type d -name"
 alias cdgoogle='cd ~/Library/Application Support/Google'
 
-alias find_picasaoriginals="find_dir .picasaoriginals"
-alias find_and_remove_picasaoriginals="find_dir .picasaoriginals  -print0 | xargs -0 trash -r --"
-
-alias find_failed_crdownload='find . -name "*.crdownload"'
-
-alias find_failed_part='find . -name "*.part"'
-alias find_and_remove_failed_part='find . -name "*.part" -print0 | xargs -0 trash -r --'
-
-for ext in mp4 gif jpg png; do
-    alias "find_failed_$ext"="find . -size -1k -name '*.$ext'"
-    alias "find_and_remove_failed_$ext"="find . -size -1k -name '*.$ext' -print0 | xargs -0 trash -r --"
-done
-
 alias pyhttp="python -m SimpleHTTPServer"
 
 alias en0dhcp="sudo ipconfig set en0 DHCP"
@@ -232,13 +206,13 @@ alias en0dhcp="sudo ipconfig set en0 DHCP"
 alias ipall="networksetup -listallhardwareports"
 
 
-alias curlheaderonly="curl -I -X GET" 
+alias curlheaderonly="curl -I -X GET"
+
+alias pgroup="groups \$(whoami) | cut -d' ' -f1"
+alias print_landscape="lp -o landscape -o fit-to-page -o media=A4 "
 
 
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
-
-#alias sotree='open -a SourceTree'
-
 
 
 
@@ -247,7 +221,7 @@ function zip_all_subdir(){
     IFS=$(echo -en "\n\b")
     for DIR in `ls`;
     do
-        if [[ -d "$DIR" ]] 
+        if [[ -d "$DIR" ]]
         then
             echo "Archiving $DIR";
             zip -r "$DIR".zip "$DIR"/*
@@ -272,12 +246,6 @@ alias dcrm='docker rm -v $(docker ps -a -q -f status=exited)'
 alias dirm='docker rmi $(docker images -q -f dangling=true)'
 alias diallrm='docker rmi $(docker images -q)'
 
-
-
-
-
-
-
 #Errata
 alias sl='ls'
 alias brwe='brew'
@@ -288,6 +256,4 @@ alias got='git'
 alias turnoffinternalmonitor="sudo nvram boot-args=niog=1"
 
 
-#my
-alias pgroup="groups \$(whoami) | cut -d' ' -f1"
 
