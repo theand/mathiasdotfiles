@@ -72,6 +72,9 @@ alias bcunf='brew cask uninstall --force '
 alias bcinst='brew cask install --force '
 alias bcsch='brew cask search '
 
+# Google Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
