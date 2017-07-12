@@ -33,6 +33,10 @@ export LESS_TERMCAP_md="${yellow}";
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty);
+
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
 
@@ -42,4 +46,3 @@ export CATALINA_HOME="/usr/local/opt/tomcat/libexec/"
 export M2_HOME="/usr/local/opt/maven/libexec/"
 export M2=$M2_HOME/bin
 export M2_REPO="~/.m2/repository/"
-
