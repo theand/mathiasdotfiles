@@ -197,6 +197,16 @@ function s() {
 	fi;
 }
 
+# `a` with no arguments opens the current directory in Atom Editor, otherwise
+# opens the given location
+function a() {
+	if [ $# -eq 0 ]; then
+		atom .;
+	else
+		atom "$@";
+	fi;
+}
+
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
@@ -223,4 +233,26 @@ function o() {
 # small enough for one screen.
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+
+function zip_all_subdir(){
+    SAVEIFS=$IFS
+    IFS=$(echo -en "\n\b")
+    for DIR in `\ls`;
+    do
+        if [[ -d "$DIR" ]]
+        then
+            echo "Archiving $DIR";
+            zip -r "$DIR".zip "$DIR"/*
+        fi
+    done
+    IFS=$SAVEIFS
+}
+
+
+function showcert()
+{
+  HOSTNAME="$1"
+  : | openssl s_client -showcerts -servername "$HOSTNAME" -connect "$HOSTNAME":443 2>/dev/null | openssl x509 -inform pem -noout -text
 }

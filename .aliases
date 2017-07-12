@@ -12,13 +12,14 @@ alias -- -="cd -"
 alias d="cd ~/Dropbox"
 alias cdl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+#alias p="cd ~/projects"
 alias g="git"
 alias gc="git clone "
 alias gs="git-smb"
 alias gf='git open'
 alias greset='git reset --hard'
 alias greseto='git reset --hard origin'
+alias gresetom='git checkout master;git reset --hard origin/master'
 alias gignored='git ls-files -o -i --exclude-standard'
 alias h="history"
 alias j="jobs"
@@ -26,6 +27,7 @@ alias rm="rm -i"
 #alias rm="trash"
 alias mv="mv -i"
 alias cp="cp -i"
+alias cdgoogle='cd ~/Library/Application Support/Google'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -38,6 +40,7 @@ fi
 
 # List all files colorized in long format
 alias l="ls -lF -f ${colorflag}"
+alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -laF  ${colorflag}"
@@ -156,7 +159,7 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+	alias "$method"="lwp-request -E -m '$method'"
 done
 
 # Make Grunt print stack traces by default
@@ -195,13 +198,11 @@ alias privoxystart="privoxy  /usr/local/etc/privoxy/config"
 alias current_git_email="git config user.email ; git config user.name "
 alias cge="current_git_email"
 
-alias cdw="cd ~/Works"
-
 #ETC
 
 alias functions="declare -F"
-alias find_dir="find . -type d -name"
-alias cdgoogle='cd ~/Library/Application Support/Google'
+alias find_dir="/usr/bin/find . -type d -name"
+alias find_symlink="find . -type l  -ls"
 
 alias pyhttp="python -m SimpleHTTPServer"
 
@@ -215,30 +216,22 @@ alias curlheaderonly="curl -I -X GET"
 alias pgroup="groups \$(whoami) | cut -d' ' -f1"
 alias print_landscape="lp -o landscape -o fit-to-page -o media=A4 "
 
+alias find_global_npm="npm list -g --depth=0"
 
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
 
-
-function zip_all_subdir(){
-    SAVEIFS=$IFS
-    IFS=$(echo -en "\n\b")
-    for DIR in `ls`;
-    do
-        if [[ -d "$DIR" ]]
-        then
-            echo "Archiving $DIR";
-            zip -r "$DIR".zip "$DIR"/*
-        fi
-    done
-    IFS=$SAVEIFS
-}
 
 alias tree1='tree -L 1'
 alias tree2='tree -L 2'
 alias tree3='tree -L 3'
 alias tree4='tree -L 4'
 
+alias findbom="grep $'\ufeff' . -R"
+#same as grep $'\xEF\xBB\xBF' . -R
+alias agbom="ag $'\ufeff'"
+#same as ag $'\xEF\xBB\xBF'
+alias agnbsp="ag $'\u00A0'"
 
 #Docker
 alias show_docker_env="env | ag docker "
@@ -254,6 +247,7 @@ alias diallrm='docker rmi $(docker images -q)'
 alias sl='ls'
 alias brwe='brew'
 alias got='git'
+alias vo='vi'
 
 
 #Disable internal monitor
@@ -261,3 +255,5 @@ alias turnoffinternalmonitor="sudo nvram boot-args=niog=1"
 
 
 
+#Postgresql process
+alias pgstart="pg_ctl -D /usr/local/var/postgres start"
