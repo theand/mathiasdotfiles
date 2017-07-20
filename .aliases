@@ -28,6 +28,7 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias cdgoogle='cd ~/Library/Application Support/Google'
+alias cloc="cloc --exclude-dir=node_modules,bower_components,target"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -44,6 +45,7 @@ alias ll="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -laF  ${colorflag}"
+alias lat="ls -laFtr  ${colorflag}"
 
 # List only directories
 alias lsd="ls -lF -f ${colorflag} | grep --color=never '^d'"

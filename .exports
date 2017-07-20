@@ -46,3 +46,4 @@ export CATALINA_HOME="/usr/local/opt/tomcat/libexec/"
 export M2_HOME="/usr/local/opt/maven/libexec/"
 export M2=$M2_HOME/bin
 export M2_REPO="~/.m2/repository/"
+
