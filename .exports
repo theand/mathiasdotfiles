@@ -46,4 +46,12 @@ export CATALINA_HOME="/usr/local/opt/tomcat/libexec/"
 export M2_HOME="/usr/local/opt/maven/libexec/"
 export M2=$M2_HOME/bin
 export M2_REPO="~/.m2/repository/"
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
+
+export red=$(tput setaf 1)
+export green=$(tput setaf 2)
+export reset=$(tput sgr0)
+
+# Oracle
+export NLS_LANG=KOREAN

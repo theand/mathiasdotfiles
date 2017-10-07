@@ -53,6 +53,10 @@ alias lsd="ls -lF -f ${colorflag} | grep --color=never '^d'"
 # Always use color output for `ls`
 alias ls="command ls -F -f ${colorflag}"
 
+# Human readable size
+alias lh="l -h"
+alias llh="ll -h"
+alias lah="la -h"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
@@ -71,6 +75,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+
+#brew, cask
 alias bcinfo='brew cask info '
 alias bcun='brew cask uninstall '
 alias bcunf='brew cask uninstall --force '
@@ -204,7 +211,9 @@ alias cge="current_git_email"
 
 alias functions="declare -F"
 alias find_dir="/usr/bin/find . -type d -name"
+alias print_subdir_all="find . -type d"
 alias find_symlink="find . -type l  -ls"
+alias find_conflicted='find ~/Dropbox -name "*conflicted*"'
 
 alias pyhttp="python -m SimpleHTTPServer"
 
@@ -222,6 +231,7 @@ alias find_global_npm="npm list -g --depth=0"
 
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
+alias truncate="truncate --size 0"
 
 
 alias tree1='tree -L 1'
@@ -259,3 +269,10 @@ alias turnoffinternalmonitor="sudo nvram boot-args=niog=1"
 
 #Postgresql process
 alias pgstart="pg_ctl -D /usr/local/var/postgres start"
+
+#iA Writer
+alias ia="open $1 -a /Applications/iA\ Writer.app"
+
+
+#gource
+alias gource_save_as="gource -1920x1080 --camera-mode overview  -seconds-per-day 0.2 --auto-skip-seconds 0.2 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 gource.mp4"

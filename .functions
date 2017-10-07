@@ -256,3 +256,20 @@ function showcert()
   HOSTNAME="$1"
   : | openssl s_client -showcerts -servername "$HOSTNAME" -connect "$HOSTNAME":443 2>/dev/null | openssl x509 -inform pem -noout -text
 }
+
+
+function unshorten(){
+    set -x
+    SHORT="$1"
+    if [[ $SHORT == "http"* ]]; 
+    then
+        prefix_http="http://"
+        prefix_https="https://"
+        SHORT=${SHORT#$prefix_http}
+        SHORT=${SHORT#$prefix_https}
+        curl https://unshorten.me/raw/${SHORT}
+    else
+        curl https://unshorten.me/raw/${SHORT}
+    fi
+    set +x
+}
