@@ -54,4 +54,4 @@ export green=$(tput setaf 2)
 export reset=$(tput sgr0)
 
 # Oracle
-export NLS_LANG=KOREAN
+#export NLS_LANG=KOREAN

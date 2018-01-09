@@ -55,3 +55,5 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -s "~/.scm_breeze/scm_breeze.sh" ] && source "~/.scm_breeze/scm_breeze.sh"
+
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi

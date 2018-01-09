@@ -12,7 +12,9 @@ alias -- -="cd -"
 alias d="cd ~/Dropbox"
 alias cdl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias cdgoogle='cd ~/Library/Application Support/Google'
 #alias p="cd ~/projects"
+
 alias g="git"
 alias gc="git clone "
 alias gs="git-smb"
@@ -21,14 +23,16 @@ alias greset='git reset --hard'
 alias greseto='git reset --hard origin'
 alias gresetom='git checkout master;git reset --hard origin/master'
 alias gignored='git ls-files -o -i --exclude-standard'
+
 alias h="history"
 alias j="jobs"
 alias rm="rm -i"
 #alias rm="trash"
 alias mv="mv -i"
 alias cp="cp -i"
-alias cdgoogle='cd ~/Library/Application Support/Google'
 alias cloc="cloc --exclude-dir=node_modules,bower_components,target"
+alias vi="nvim"
+alias vim="nvim"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -48,7 +52,7 @@ alias la="ls -laF  ${colorflag}"
 alias lat="ls -laFtr  ${colorflag}"
 
 # List only directories
-alias lsd="ls -lF -f ${colorflag} | grep --color=never '^d'"
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls -F -f ${colorflag}"
@@ -92,6 +96,7 @@ alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Ch
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -191,6 +196,9 @@ alias reload="exec $SHELL -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# show java parameters prettier
+alias psjava="ps -ef | grep java | grep -v grep | sed 's/ -/\n\t\t\t\t\t\t\t-/g'"
+
 
 
 #EUC-KR to UTF-8
@@ -213,9 +221,11 @@ alias functions="declare -F"
 alias find_dir="/usr/bin/find . -type d -name"
 alias print_subdir_all="find . -type d"
 alias find_symlink="find . -type l  -ls"
+alias find_broken_symlink="find . -type l ! -exec test -e {} \; -print"
 alias find_conflicted='find ~/Dropbox -name "*conflicted*"'
 
 alias pyhttp="python -m SimpleHTTPServer"
+alias pyhttp3="python3 -m http.server --cgi"
 
 alias en0dhcp="sudo ipconfig set en0 DHCP"
 
@@ -276,3 +286,10 @@ alias ia="open $1 -a /Applications/iA\ Writer.app"
 
 #gource
 alias gource_save_as="gource -1920x1080 --camera-mode overview  -seconds-per-day 0.2 --auto-skip-seconds 0.2 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 gource.mp4"
+
+
+#Ruby
+alias be="bundle exec"
+alias bguard="bundle exec guard"
+
+
