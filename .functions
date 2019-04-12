@@ -215,7 +215,7 @@ function unshorten(){
 
 #서브디렉토리들의 git remote 저장소 주소를 뽑아내기.
 function get_all_git_origin(){
-    for DIR in `\ls -f`;
+    for DIR in `\ls -F`;
     do
         if [[ -d $DIR ]] && [[ -d $DIR/.git ]]
         then
@@ -248,7 +248,7 @@ function gc_git_all(){
             echo "Processing : $DIR"
             cd $DIR ;
             git remote prune origin;
-            git gc;
+            git gc --quiet;
             cd .. ;
         fi
     done
@@ -258,10 +258,13 @@ function gc_git_all_sub(){
     shopt -u dotglob
     for DIR in `\ls -A`;
     do
-        echo "In : $DIR"
-        cd $DIR ;
-        gc_git_all;
-        cd ..;
+    	if [[ -d $DIR ]]
+        then
+		echo "In : $DIR"
+		cd $DIR ;
+		gc_git_all;
+		cd ..;
+	fi
     done
 }
 
@@ -302,5 +305,6 @@ function npm_install {
     touch ./node_modules/.metadata_never_index
 }
 alias i=npm_install
+
 
 
