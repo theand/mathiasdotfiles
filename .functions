@@ -358,5 +358,14 @@ function json_sort(){
 
 
 
+function npm_install {
+    if [ -f yarn.lock ]; then
+        yarn install $@
+    else
+        npm install $@
+    fi
+    touch ./node_modules/.metadata_never_index
+}
+alias i=npm_install
 
 

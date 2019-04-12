@@ -16,11 +16,9 @@ bcomp ../.gitattributes ./.gitattributes
 bcomp ../.gitconfig ./.gitconfig
 bcomp ../.gitignore ./.gitignore
 bcomp ../.gvimrc ./.gvimrc
-bcomp ../.hgignore ./.hgignore
 bcomp ../.hushlogin ./.hushlogin
 bcomp ../.inputrc ./.inputrc
 bcomp ../.path ./.path
 bcomp ../.profile ./.profile
 bcomp ../.screenrc ./.screenrc
-bcomp ../.tmux.conf ./.tmux.conf
 bcomp ../.wgetrc ./.wgetrc

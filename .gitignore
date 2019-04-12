@@ -1,4 +1,5 @@
 bower_components/
+node_modules/
 
 # https://github.com/github/gitignore
 # https://help.github.com/articles/ignoring-files
