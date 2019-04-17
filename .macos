@@ -200,8 +200,8 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bo
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
-#defaults write com.apple.screensaver askForPassword -int 1
-#defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
@@ -342,7 +342,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 36 pixels
-#defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 36
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
@@ -359,7 +359,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
@@ -404,8 +404,8 @@ defaults write com.apple.dock show-recents -bool false
 find "${HOME}/Library/Application Support/Dock" -maxdepth 1 -name "*-*.db" -delete
 
 # Add iOS & Watch Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
+#sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+#sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
@@ -713,6 +713,8 @@ defaults write com.apple.TextEdit RichText -int 0
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+# Set tab width to 4 instead of the default 8
+defaults write com.apple.TextEdit "TabWidth" '4'
 
 # Enable the debug menu in Disk Utility
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
@@ -908,28 +910,75 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome Canary" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Opera" \
-	"Photos" \
-	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
-	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
-	"Tweetbot" \
-	"Twitter" \
-	"iCal"; do
-	# killall "${app}" &> /dev/null
-done
+# for app in "Activity Monitor" \
+# 	"Address Book" \
+# 	"Calendar" \
+# 	"cfprefsd" \
+# 	"Contacts" \
+# 	"Dock" \
+# 	"Finder" \
+# 	"Google Chrome Canary" \
+# 	"Google Chrome" \
+# 	"Mail" \
+# 	"Messages" \
+# 	"Opera" \
+# 	"Photos" \
+# 	"Safari" \
+# 	"SizeUp" \
+# 	"Spectacle" \
+# 	"SystemUIServer" \
+# 	"Terminal" \
+# 	"Transmission" \
+# 	"Tweetbot" \
+# 	"Twitter" \
+# 	"iCal"; do
+# 	# killall "${app}" &> /dev/null
+# done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+###############################################################################
+# Other Settings from online
+###############################################################################
+
+#### https://gist.github.com/bradp/bea76b16d3325f5c47d4
+
+#"Allow text selection in Quick Look"
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+
+#### https://cojo.eu/post/install-configure-macos-mojave/
+
+# Bluetooth: Show Bluetooth in the menu bar
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -bool true
+
+# Mouse & Trackpad -> Trackpad Options -> Enable Dragging
+defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+
+defaults write com.apple.dock orientation -string "left"          # Position on screen
+
+# Ask to keep changes when closing documents
+defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
+
+#### https://github.com/jacobbednarz/dotfiles/blob/master/osx/install.sh
+# Trackpad: swipe between pages with three fingers
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+
+
+#### from https://github.com/boxen/puppet-osx/blob/master/manifests/
+
+#Sets function keys to be standard function keys (instead of always sending Fn). Requires re-login.
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+
+#### from bash history
+
+# etc
+defaults write com.apple.diskspaced minFreeSpace 1
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
