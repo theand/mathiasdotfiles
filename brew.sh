@@ -1,3 +1,8 @@
+#!/bin/sh
+
+#it requires multiple reboot and sudo password
+brew bundle
+
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
@@ -9,12 +14,12 @@
 #brew upgrade
 
 # Save Homebrew’s installed location.
-BREW_PREFIX=$(brew --prefix)
+#BREW_PREFIX=$(brew --prefix)
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 #brew install coreutils
-ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+#ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install some other useful utilities like `sponge`.
 # brew install moreutils
