@@ -55,7 +55,10 @@ export reset=$(tput sgr0)
 
 # Oracle with Ruby, Rails
 ## oracle_enhanced
-export NLS_LANG=KOREAN_KOREA.AL32UTF8
 ## ruby-oci8
-export OCI_DIR=/usr/local/opt/instantclient-basic/lib
-export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/local/opt/instantclient-basic/lib
+##export OCI_DIR=/usr/local/opt/instantclient-basic/lib
+##export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/local/opt/instantclient-basic/lib
+
+
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1;
