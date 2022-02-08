@@ -125,6 +125,7 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
+
 # Thumbnails
 ._*
 
@@ -214,3 +215,6 @@ xcuserdata
 *.xccheckout
 *.moved-aside
 *.xcuserstate
+*.csv
+*local-vpn*.xml
+brunch-core/src/main/resources/filter/local

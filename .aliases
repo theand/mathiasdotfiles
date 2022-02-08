@@ -11,24 +11,26 @@ alias -- -="cd -"
 # Shortcuts
 alias d="cd ~/Dropbox"
 alias dr="cd ~/Dropbox"
+alias cdr="cd ~/Dropbox"
 alias cdl="cd ~/Downloads"
+alias dw="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias cdgoogle='cd ~/Library/Application Support/Google'
+alias cdgoogle='cd ~/Library/Application\ Support/Google'
 
 alias g="git"
 alias gc="git clone "
-alias gs="git-smb"
+#alias gs="git-smb"
 alias gf='git open'
 alias greset='git reset --hard'
 alias greseto='git reset --hard origin'
 alias gresetom='git checkout master;git reset --hard origin/master'
 alias gignored='git ls-files -o -i --exclude-standard'
 
-#alias rm="rm -i"
-alias rm="trash -i"
+alias rm="rm -i"
+#alias rm="trash -i"
 alias mv="mv -i"
 alias cp="cp -i"
-alias cloc="cloc --exclude-dir=node_modules,bower_components,target"
+#alias cloc="cloc --exclude-dir=node_modules,bower_components,target"
 alias vi="nvim"
 alias vim="nvim"
 
@@ -82,15 +84,17 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 
 
 #brew, cask
-alias bcinfo='brew cask info '
-alias bcun='brew cask uninstall '
-alias bcunf='brew cask uninstall --force '
-alias bcinst='brew cask install --force '
-alias bcsch='brew cask search '
+alias caskinfo='brew info --cask '
+alias caskuninstall='brew uninstall --cask '
+alias caskuninstallforce='brew uninstall --cask --force '
+alias caskinstall='brew install --cask --force '
+alias casksearch='brew search --cask '
+alias caskupgrade='brew upgrade --cask'
 
 # Google Chrome
+#TODO
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+#alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # IP addresses
 #alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -145,7 +149,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # Merge PDF files, preserving hyperlinks
 # Usage: `mergepdf input{1,2,3}.pdf`
-alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+#alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -167,6 +171,9 @@ alias map="xargs -n1"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "${method}"="lwp-request -E -m '${method}'"
 done
+
+# Make Grunt print stack traces by default
+command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
@@ -207,9 +214,12 @@ alias cge="current_git_email"
 #ETC
 
 alias functions="declare -F"
+
 alias find_dir="/usr/bin/find . -type d -name"
 alias find_empty_dir='find . -type d -empty'
+alias find_and_remove_empty_dir='find . -type d -empty -print0 | xargs -0 rmdir  --'
 alias print_subdir_all="find . -type d"
+
 alias find_symlink="find . -type l  -ls"
 alias find_broken_symlink="find . -type l ! -exec test -e {} \; -print"
 alias find_conflicted='find ~/Dropbox -name "*conflicted*"'
@@ -232,7 +242,6 @@ alias find_global_npm="npm list -g --depth=0"
 function anybar { echo -n $1 | nc -4u -w0 localhost ${2:-1738}; }
 
 alias truncate="truncate --size 0"
-
 
 alias tree1='tree -L 1'
 alias tree2='tree -L 2'
@@ -268,14 +277,14 @@ alias turnoffinternalmonitor="sudo nvram boot-args=niog=1"
 
 
 #Postgresql process
-alias pgstart="pg_ctl -D /usr/local/var/postgres start"
+#alias pgstart="pg_ctl -D /usr/local/var/postgres start"
 
 #iA Writer
 alias ia="open $1 -a /Applications/iA\ Writer.app"
 
 
 #gource
-alias gource_save_as="gource -1920x1080 --camera-mode overview  -seconds-per-day 0.2 --auto-skip-seconds 0.2 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 gource.mp4"
+#alias gource_save_as="gource -1920x1080 --camera-mode overview  -seconds-per-day 0.2 --auto-skip-seconds 0.2 -o - | ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i - -vcodec libx264 -preset ultrafast -pix_fmt yuv420p -crf 1 -threads 0 -bf 0 gource.mp4"
 
 
 #Ruby
@@ -285,3 +294,7 @@ alias bguard="bundle exec guard"
 
 #Nodejs
 alias touch_all_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
+
+#etc
+alias stop_spotlight="touch .metadata_never_index"
+alias ticket_viewer="open /System/Library/CoreServices/Ticket\ Viewer.app"

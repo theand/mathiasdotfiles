@@ -180,6 +180,19 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[user]
+	name = Heesang Chae
+	email = theand@gmail.com
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
 	
 [filter "lfs"]
 	clean = git-lfs clean -- %f

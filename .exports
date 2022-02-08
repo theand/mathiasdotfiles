@@ -41,6 +41,7 @@ export GPG_TTY=$(tty);
 export GREP_OPTIONS='--color=auto';
 
 # Java Dev Env.
+#TODO
 export JAVA_HOME=$(/usr/libexec/java_home)
 export CATALINA_HOME="/usr/local/opt/tomcat@8/libexec/" 
 export M2_HOME="/usr/local/opt/maven/libexec/"
@@ -55,9 +56,10 @@ export reset=$(tput sgr0)
 
 # Oracle with Ruby, Rails
 ## oracle_enhanced
+#export NLS_LANG=KOREAN_KOREA.AL32UTF8
 ## ruby-oci8
-##export OCI_DIR=/usr/local/opt/instantclient-basic/lib
-##export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/local/opt/instantclient-basic/lib
+#export OCI_DIR=/usr/local/opt/instantclient-basic/lib
+#export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/local/opt/instantclient-basic/lib
 
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
