@@ -308,3 +308,14 @@ alias i=npm_install
 
 
 
+function check_head_from_txt(){
+    while read line;
+    do
+        HEAD $line ;
+    done < $1
+}
+
+
+function e2u_inplace(){
+    e2u $1 | sponge $1
+}

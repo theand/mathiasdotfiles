@@ -41,13 +41,15 @@ export GPG_TTY=$(tty);
 export GREP_OPTIONS='--color=auto';
 
 # Java Dev Env.
-#TODO
 export JAVA_HOME=$(/usr/libexec/java_home)
-export CATALINA_HOME="/usr/local/opt/tomcat@8/libexec/" 
-export M2_HOME="/usr/local/opt/maven/libexec/"
-export M2=$M2_HOME/bin
-export M2_REPO="~/.m2/repository/"
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export CATALINA_HOME="$(brew --prefix)/opt/tomcat@8/libexec/"
+#export M2_HOME="$(brew --prefix)/opt/maven/libexec/"
+#export M2=$M2_HOME/bin
+#export M2_REPO="~/.m2/repository/"
+export GROOVY_HOME=$(brew --prefix)/opt/groovy/libexec
+#export JAVA_OPTS="--add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED --add-modules ALL-MODULE-PATH"
 
 
 export red=$(tput setaf 1)
@@ -58,8 +60,8 @@ export reset=$(tput sgr0)
 ## oracle_enhanced
 #export NLS_LANG=KOREAN_KOREA.AL32UTF8
 ## ruby-oci8
-#export OCI_DIR=/usr/local/opt/instantclient-basic/lib
-#export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/local/opt/instantclient-basic/lib
+#export OCI_DIR=/opt/homebrew/opt/instantclient-basic/lib
+#export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/opt/homebrew/lib:/lib:/opt/homebrew/opt/instantclient-basic/lib
 
 
 # Hide the “default interactive shell is now zsh” warning on macOS.

@@ -1,8 +1,19 @@
 
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH";
-export MANPATH="/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH";
-export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="$PATH:/opt/etcher-cli"
 
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
+export PATH="$(brew --prefix)/opt/postgresql@14/bin:$PATH"
+export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+export PATH="$HOME/.docker/bin:$PATH"
+
+
+#gnu utils
+export PATH="$HOME/bin:$(brew --prefix)/opt/findutils/libexec/gnubin:$(brew --prefix)/opt/coreutils/libexec/gnubin:$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH";
+export MANPATH="$(brew --prefix)/opt/findutils/libexec/gnuman:$(brew --prefix)/opt/coreutils/libexec/gnuman:$(brew --prefix)/opt/gnu-sed/libexec/gnuman:$(brew --prefix)/opt/gnu-tar/libexec/gnuman:$MANPATH";
+
+
+#python3
+#export PATH="/Users/ciao/Library/Python/3.9/bin:$PATH"

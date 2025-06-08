@@ -1,238 +1,219 @@
+tap "adoptopenjdk/openjdk"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
-tap "instantclienttap/instantclient"
-cask "adoptopenjdk8"
-brew "ack"
-brew "annie"
 brew "sqlite"
-brew "python"
+brew "xz"
 brew "ansible"
-brew "ansible-cmdb"
-brew "aria2"
-brew "autoconf"
+brew "argocd"
+brew "git"
+brew "asdf"
+brew "python@3.10"
 brew "autojump"
-brew "automake"
 brew "bash"
 brew "bash-completion@2"
-brew "bash-git-prompt"
-brew "bfg" #TODO
-brew "icu4c"
-brew "gettext"
-brew "libffi"
-brew "pcre"
+brew "bat"
 brew "ccat"
-brew "cheat"
-#TODO
-brew "checkstyle" 
 brew "cloc"
-brew "clojure"
-brew "cmake"
+brew "convmv"
 brew "coreutils"
-brew "dark-mode"
-brew "libgcrypt"
-brew "libksba"
-brew "dns2tcp"
+brew "fzf"
+brew "kubernetes-cli"
+brew "tmux"
+brew "dkosctl"
 brew "dos2unix"
-brew "libexif"
-brew "popt"
 brew "exif"
 brew "exiftags"
+brew "exiftool"
 brew "fd"
-brew "libevent"
-brew "lame"
-brew "ffmpeg"
+brew "harfbuzz"
+brew "ffmpegthumbnailer"
 brew "findutils"
-brew "fzf"
-brew "gcc"
+brew "fortio"
+brew "gh"
 brew "git-flow-avh"
 brew "git-lfs"
 brew "gnu-sed"
 brew "gnu-tar"
-brew "libusb"
-brew "gnupg"
-brew "go"
+brew "icu4c@76"
+brew "openjdk"
 brew "gradle"
 brew "grep"
-brew "gron"
-brew "groovy"
-brew "node"
-brew "httpdiff"
 brew "httpie"
 brew "httping"
 brew "httpry"
 brew "httpstat"
 brew "hub"
 brew "icdiff"
-brew "libtool"
 brew "imagemagick"
-brew "iproute2mac"
-brew "javarepl"
+brew "jd"
+brew "jemalloc"
 brew "jenv"
-brew "jid"
-brew "oniguruma"
 brew "jq"
-brew "leiningen"
-brew "libusb-compat"
-brew "libuv"
-brew "libxml2"
+brew "kcat"
+brew "kustomize"
+brew "llm"
 brew "loc"
-brew "lynx"
 brew "mackup"
+brew "node", link: false
+brew "marp-cli"
 brew "mas"
 brew "maven"
-brew "mhash"
-brew "mcrypt"
 brew "moreutils"
-brew "mr"
-brew "mysql@5.6"
 brew "neovim"
-brew "nghttp2"
 brew "nvm"
-brew "openssh"
-brew "pkg-config"
-brew "pmd"
-brew "privoxy"
-brew "putty"
+brew "ollama"
+brew "pkgconf"
+brew "poppler"
 brew "pv"
+brew "pyenv"
 brew "q"
 brew "recode"
 brew "redis"
 brew "rename"
 brew "ripgrep"
-brew "ruby", link: true
-brew "scala"
+brew "ruby"
 brew "shellcheck"
-brew "speedtest-cli"
-brew "spotbugs"
-brew "sqlmap"
+brew "siege"
+brew "sqlite-analyzer"
 brew "ssh-copy-id"
+brew "superfile"
+brew "tcping"
 brew "testssl"
 brew "textql"
 brew "the_silver_searcher"
-brew "tmux"
-brew "tomcat@8"
+brew "tldr"
+brew "tokei"
+#brew "tomcat@8"
+brew "tomcat@9"
 brew "tree"
-brew "typescript"
-brew "unixodbc"
-brew "utf8proc"
-brew "w3m"
+brew "unar"
+brew "uv"
 brew "wget"
 brew "xsv"
+brew "yazi"
 brew "you-get"
 brew "youtube-dl"
-#TODO manually download
-#brew "instantclienttap/instantclient/instantclient-basic", link: false 
-#brew "instantclienttap/instantclient/instantclient-sdk"
-#brew "instantclienttap/instantclient/instantclient-sqlplus"
-cask "aerial"
+brew "yt-dlp"
+brew "zoxide"
+cask "aldente"
 cask "alfred"
 cask "appcleaner"
-cask "atom"
+cask "arc"
 cask "beyond-compare"
-cask "cakebrew"
-cask "ccleaner"
+cask "brave-browser"
+cask "claude"
+cask "clipy"
+cask "cursor"
 cask "daisydisk"
+cask "dash"
 cask "day-o"
-cask "devdocs"
 cask "devonthink"
-cask "disk-inventory-x"
+cask "digikam"
 cask "docker"
+cask "dozer"
 cask "dropbox"
-cask "duet"
-cask "evernote"
+cask "exifrenamer"
 cask "firefox"
+cask "font-cascadia-code"
 cask "font-d2coding"
+cask "font-d2coding-nerd-font"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+cask "font-nanum-gothic"
+cask "font-symbols-only-nerd-font"
 cask "geektool"
-cask "gifcapture"
-cask "google-photos-backup-and-sync"
+cask "google-chrome"
+cask "google-drive"
+cask "gureumkim"
 cask "handbrake"
-cask "hyper"
-cask "iina"
-cask "imageoptim"
+cask "iterm2"
+cask "jdk-mission-control"
+cask "jetbrains-toolbox"
 cask "kap"
-cask "kensington-trackball-works"
-cask "lepton"
-cask "loading"
-cask "macdown"
-cask "marp"
-cask "mojibar"
-cask "mysqlworkbench"
-cask "ngrok"
-cask "notion"
-cask "nvalt"
-cask "opera"
-cask "p4v"
+cask "karabiner-elements"
+cask "keka"
+cask "memoryanalyzer"
+cask "movist-pro"
+cask "ollamac"
+cask "omnissa-horizon-client"
+cask "openinterminal-lite"
 cask "pdf-expert"
-cask "plistedit-pro"
 cask "postman"
-cask "proxyman"
-cask "qblocker"
-cask "qdesktop"
+cask "rapidapi"
 cask "rescuetime"
-cask "save-hollywood"
-cask "scroll-reverser"
-cask "shuttle"
 cask "slack"
 cask "sourcetree"
-cask "stand"
 cask "steam"
-cask "telegram-desktop"
-cask "tickeys"
-cask "timings"
-cask "typora"
-cask "vagrant"
-cask "vagrant-manager"
-cask "vimr"
-cask "virtualbox"
+cask "temurin@21"
 cask "visual-studio-code"
-cask "vlc"
-cask "vmware-horizon-client"
-cask "wordpresscom"
+cask "visualvm"
+cask "xnconvert"
 cask "xnviewmp"
-mas "AppLocker", id: 1132845904
-mas "Apps on Sale", id: 448002467
-mas "ArcSoft Photo+", id: 628703558
-mas "Battery Indicator", id: 1206020918
-mas "Better Rename 9", id: 414209656
-mas "Day One Classic", id: 422304217
-mas "Divvy", id: 413857545
-mas "EasyRes", id: 688211836
-mas "EasyWebBrowser", id: 829422862
-mas "Fantastical 2", id: 975937182
-mas "ForkLift", id: 412448059
-mas "Gemini", id: 463541543
-mas "GIF Brewery 3", id: 1081413713
-mas "GIPHY CAPTURE", id: 668208984
-mas "JustFocus", id: 1142151959
-mas "KakaoTalk", id: 869223134
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Mactracker", id: 430255202
-mas "Movist", id: 461788075
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "PhotoScapeX", id: 929507092
-mas "Pine Player", id: 1112075769
-mas "PopClip", id: 445189367
-mas "QuickShot", id: 965442961
+cask "zen"
+cask "zoom"
+cask "zulip"
+#mas "Actions", id: 1586435171
+#mas "Amphetamine", id: 937984704
+#mas "AppLocker", id: 1132845904
+#mas "ArcSoft Photo+", id: 628703558
+#mas "Better Rename 9", id: 414209656
+#mas "Checkor", id: 1238750814
+#mas "Color Picker", id: 1545870783
+#mas "Command X", id: 6448461551
+mas "Dato", id: 1470584107
+#mas "Day One", id: 1055511498
+#mas "Divvy", id: 413857545
+#mas "EasyRes", id: 688211836
+#mas "Everlog", id: 1519935634
+#mas "Fantastical", id: 975937182
+#mas "Folder Peek", id: 1615988943
+#mas "ForkLift", id: 412448059
+#mas "fullmoon", id: 6727014156
+#mas "Gemini", id: 463541543
+#mas "Gifski", id: 1351639930
+mas "Hancom Office HWP Viewer", id: 416746898
+#mas "HEIC Converter", id: 1294126402
+#mas "Hyperduck", id: 6444667067
+#mas "iA Writer", id: 775737590
+#mas "Jiffy", id: 1502527999
+#mas "KakaoTalk", id: 869223134
+#mas "Keynote", id: 409183694
+#mas "LINE", id: 539883307
+#mas "Melon", id: 1236050766
+#mas "Microsoft To Do", id: 1274495053
+#mas "Monosnap", id: 540348655
+#mas "Notability", id: 736189492
+#mas "Numbers", id: 409203825
+#mas "Okta Verify", id: 490179405
+#mas "One Thing", id: 1604176982
+#mas "Pandan", id: 1569600264
+#mas "Pasteboard Viewer", id: 1499215709
+#mas "Perplexity", id: 6714467650
+mas "PhotoScape X", id: 929507092
+#mas "Pixave", id: 924891282
+#mas "Plain Text Editor", id: 1572202501
+#mas "Plash", id: 1494023538
+#mas "PopClip", id: 445189367
+mas "Private Browser", id: 829422862
+#mas "Pure Paste", id: 1611378436
+#mas "Refined GitHub", id: 1519867270
+mas "Screenie", id: 965442961
+#mas "Shareful", id: 1522267256
+#mas "Soulver 2", id: 413965349
+#mas "Speediness", id: 1596706466
+mas "The Unarchiver", id: 425424353
+#mas "Today", id: 6443714928
 mas "Trello", id: 1278508951
-mas "Tweetbot", id: 557168941
-mas "VOX", id: 461369673
-mas "Wunderlist", id: 410628904
-mas "Yoink", id: 457622435
 
-#US account
-mas "Deckset", id: 847496013
-mas "Did I Click", id: 555241974
-mas "iA Writer", id: 775737590
-mas "iThoughtsX", id: 720669838
-mas "Notability", id: 736189492
 mas "Tumblelog Picture Archiver", id: 702387412
-mas "TumblrVideoBrowser", id: 866376427
-mas "whereismymouse", id: 887893671
+mas "UTC Time", id: 1538245904
+#mas "Velja", id: 1607635845
+mas "Video Crawler for Tumblr", id: 866376427
 mas "Yet Comic Reader", id: 934751602
+mas "Yoink", id: 457622435
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "marp-team.marp-vscode"
